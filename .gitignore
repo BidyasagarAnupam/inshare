@@ -1,5 +1,5 @@
-/backend/.env
-/backend/uploads/*
-/backend/!uploads/.gitkeep
-/backend/node_modules
+.env
+uploads/*
+!uploads/.gitkeep
+node_modules
 atlas password.txt
