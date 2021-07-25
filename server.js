@@ -6,6 +6,8 @@ const path = require('path');
 const connectDB = require("./config/db");
 connectDB();
 
+
+
 // Template engile
 app.set('Views', path.join(__dirname, '/views'));
 app.set('view engine', 'ejs');
