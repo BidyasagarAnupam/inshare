@@ -60,7 +60,7 @@ copyBtn.addEventListener("click", (e) => {
 const uploadFile = () => {
   if (fileInput.files.length > 1) {
     resetFileInput();
-    showToast("⚠ Only oppload one file");
+    showToast("⚠ Only uppload one file");
     return;
   }
   const file = fileInput.files[0];
