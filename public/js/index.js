@@ -121,6 +121,7 @@ const onUploadSuccess = ({ file: url }) => {
   emailForm[2].removeAttribute("disabled", "true");
   progressContainer.style.display = "none";
   sharingContainer.style.display = "block";
+  showToast("Upload Success🤩");
   fileURLInput.value = url;
 };
 
