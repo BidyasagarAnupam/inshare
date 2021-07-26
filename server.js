@@ -14,15 +14,21 @@ const corsOptions = {
 };
 app.use(cors(corsOptions));
 
-// Template engile
-app.set("Views", path.join(__dirname, "/views"));
-app.set("view engine", "ejs");
-
 //
 app.use(express.static(__dirname + "/public"));
 app.use(express.json());
 
+// Template engile
+app.set("Views", path.join(__dirname, "/views"));
+app.set("view engine", "ejs");
+
 // Routes
+// app.use("/", require("./routes/staticFile"));
+app.get("", (req, res) => {
+  //   res.send("ok");
+    res.sendFile("index.html", { root: __dirname + "/public" });
+//   res.render("index");
+});
 app.use("/api/files", require("./routes/files"));
 app.use("/files", require("./routes/show"));
 app.use("/files/download", require("./routes/download"));
