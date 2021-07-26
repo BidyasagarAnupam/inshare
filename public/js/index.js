@@ -121,8 +121,10 @@ const onUploadSuccess = ({ file: url }) => {
   emailForm[2].removeAttribute("disabled", "true");
   progressContainer.style.display = "none";
   sharingContainer.style.display = "block";
-  showToast("Upload Success🤩");
   fileURLInput.value = url;
+  showToast("Upload Success🤩");
+  emailForm.elements["to-email"].value = "";
+  emailForm.elements["from-email"].value = "";
 };
 
 const resetFileInput = () => {
@@ -154,7 +156,6 @@ emailForm.addEventListener("submit", (e) => {
         showToast("Email Sent🎉");
       } else {
         showToast("Email not Sent😢");
-
       }
     });
 });
@@ -165,6 +166,6 @@ const showToast = (msg) => {
   toast.style.transform = "translate( -50% ,0)";
   clearTimeout(toastTimer);
   toastTimer = setTimeout(() => {
-    toast.style.transform = "translate( -50% ,60px)";
+    toast.style.transform = "translate( -50% ,80px)";
   }, 2000);
 };
