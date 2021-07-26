@@ -136,7 +136,8 @@ emailForm.addEventListener("submit", (e) => {
     emailTo: emailForm.elements["to-email"].value,
     emailFrom: emailForm.elements["from-email"].value,
   };
-  // console.table(formData);
+
+  console.table(formData);
   emailForm[2].setAttribute("disabled", "true");
   fetch(emailURL, {
     method: "POST",
@@ -150,6 +151,9 @@ emailForm.addEventListener("submit", (e) => {
       if (success) {
         sharingContainer.style.display = "none";
         showToast("Email Sent🎉");
+      } else {
+        showToast("Email not Sent😢");
+
       }
     });
 });
